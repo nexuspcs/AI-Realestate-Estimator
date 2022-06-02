@@ -1,0 +1,108 @@
+<head>
+
+	<title>Medford, MA Property Evaluator</title>
+	
+	<style>
+		
+		body {
+			margin: 0px;
+			align: center;
+			text-align: center;
+			font-family: Arial;
+			color: white;
+			background-image: linear-gradient(#780206, #061161);
+		}
+		
+		h1 {
+			align: center;
+			text-align: center;
+		}
+		
+		.bg {
+			background-image: url("business.jpg");
+			background-size: 100%;
+			-webkit-filter: blur(8px);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 100%;
+			filter: brightness(50%) blur(3px);
+			margin: -0px -3px -0px -3px;
+			
+		}
+		
+		input[type=text] {
+			width: 200px;
+			height: 45px;
+			padding: 12px 20px;
+			margin: 8px 0;
+			box-sizing: border-box;
+		}
+		
+		.parent {
+			overflow: hidden;
+		}
+		
+		.top {
+			z-index: 2;	
+			top: 40%;
+			left: 50%;
+			position: absolute;
+			transform: translate(-50%, -50%);
+		}
+		
+		input { 
+			text-align: center; 
+		}
+		
+		button {
+			background-color: #7091c2;
+			border: none;
+			color: white;
+			padding: 10px 20px;
+			width: 200px;
+			height: 45px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+		}
+		
+	</style>
+	
+</head>
+
+<body>
+
+	<!--
+	<div class="parent">
+		<div class="bg"></div>
+	</div>
+	-->
+	
+	<!--
+	<img src="business.jpg">
+	-->
+	<div class="top">	
+		
+		<h1>Medford, MA FREE Property Evaluator</h1>
+		
+		<br>
+		<form action="{{url_for('predict')}}"method="post">
+			<input type="text" name="years" placeholder="Number of beds" required="required" />
+			<input type="text" name="sqft" placeholder="Square Feet" required="required" />
+			<input type="text" name="acre_lots" placeholder="Acre Lots" required="required" />
+			<!--
+			<input type="text" name="age" placeholder="Age" required="required" />
+			<input type="text" name="age" placeholder="Age" required="required" />
+			<input type="text" name="est_salary" placeholder="Estimated Salary" required="required" />
+			-->
+			<br>
+			<br>
+			<button type="submit">Get Evaluation</button>
+		</form>
+		
+		{{ evaluation_text }}
+		<!-- asdf -->
+	</div>
+</body>
